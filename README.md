@@ -13,7 +13,8 @@ After installing required packages, your ```pip list``` should return something 
 pip install -r requirements.txt
 ```
 ## The application
-The idea is to get familiar with HTTP methods (GET, POST, PUT, DELETE). I created a few endpoints:
+The idea is to get familiar with HTTP methods (GET, POST, PUT, DELETE).
+Let's imagine this is a store and we need to be able to manage our inventory.
 
 ## Running
 On your terminal, use the following command:
@@ -29,3 +30,15 @@ INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 ```
 From which you can get the URL to access the webserver. Just open it in the browser.
+
+## Usage
+Let's say we have an inventory for an online store. 
+```python
+inventory = {
+    1: {
+        "name": "PSU",
+        "details": "850W",
+        "price": "200"
+    }
+}
+```
