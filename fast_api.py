@@ -7,7 +7,7 @@ from fastapi import FastAPI, HTTPException, Path, Query, status
 from pydantic import BaseModel
 
 app = FastAPI()
-
+inventory = {}
 
 class Item(BaseModel):
     """
@@ -27,14 +27,19 @@ class UpdateItem(BaseModel):
     price: Optional[float] = None
 
 
-inventory = {}
+@app.get("/")
+def home():
+    """
+    Greetings
+    """
+    return {"Data": "Hello world!"}
 
 
 @app.get("/get-item/{item_id}")
 def get_item_by_id(item_id: int = Path(description="The ID of the item being searched", gt=0)):
     """
-    Get an item on the inventory by its ID.
-    Should not work if ID does not exist.
+    Get an item on the inventory by its ID
+    Should not work if ID does not exist
     """
     if item_id in inventory:
         return inventory[item_id]

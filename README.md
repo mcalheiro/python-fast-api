@@ -29,16 +29,14 @@ INFO:     Started server process [13820]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 ```
-From which you can get the URL to access the webserver. Just open it in the browser.
+From which you can get the URL (```http://127.0.0.1:8000``` or ```localhost:8000```) to access the webserver. Just open it in the browser.
 
 ## Usage
-Let's say we have an inventory for an online store. 
-```python
-inventory = {
-    1: {
-        "name": "PSU",
-        "details": "850W",
-        "price": "200"
-    }
-}
-```
+As seen before, the URL to access the server is ```localhost:8000```. FastAPI provides an interface that helps interacting with the endpoints. To use it, go to ```localhost:8000/docs``` and you should see something similar to this:
+
+![list of endpoints in FastAPI docs](./images/image.png)
+
+To interact with each endpoint, expand and click "Try it out". Then, fill the necessary inputs and click "Execute". It's intuitive ans easy to use.
+
+# Testing
+TO-DO: implement tests.
